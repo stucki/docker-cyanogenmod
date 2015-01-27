@@ -31,7 +31,7 @@ if [[ $IS_RUNNING == "true" ]]; then
 elif [[ $IS_RUNNING == "false" ]]; then
 	docker start -i $CONTAINER
 else
-	docker run -v $SOURCE:$CONTAINER_HOME/android -v $CCACHE:/srv/ccache -i -t --name $CONTAINER $REPOSITORY sh -c "screen -s /bin/bash"
+	docker run --privileged -v /dev/bus/usb:/dev/bus/usb -v $SOURCE:$CONTAINER_HOME/android -v $CCACHE:/srv/ccache -i -t --name $CONTAINER $REPOSITORY sh -c "screen -s /bin/bash"
 fi
 
 exit $?
