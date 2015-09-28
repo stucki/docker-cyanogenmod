@@ -27,7 +27,7 @@ The container uses "screen" to run the shell. This means that you will be able t
 ### How to build CyanogenMod for your device
 
 ```
-repo init -u git://github.com/CyanogenMod/android.git -b cm-12.0
+repo init -u git://github.com/CyanogenMod/android.git -b cm-12.1
 repo sync
 source build/envsetup.sh
 breakfast <device codename>   # example: breakfast grouper
