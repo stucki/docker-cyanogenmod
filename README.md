@@ -40,6 +40,9 @@ breakfast <device codename>   # example: breakfast grouper
 brunch <device codename>      # example: brunch grouper
 ```
 
+### ADB in the container
+If you're on Linux and want to use adb from within the container running with `-u` might not be enough. Make sure you have the [Android udev rules](https://github.com/M0Rf30/android-udev-rules/blob/master/51-android.rules) installed on your host system so you can access your device without needing superuser permissions.
+
 ### Links
 
 For further information, check the following links:
