@@ -24,11 +24,16 @@ cd docker-lineageos
 
 The `run.sh` script accepts the following switches:
 
-* -u|--enable-usb - runs the container in privileged mode (this way you can use adb right from the container)
-* -r|--rebuild - force rebuild the image from scratch
-* -ws|--with-su - Sets the WITH_SU environment variable to true (your builds will include the su binary)
+| Switch | Alternative | Description  |
+|---|---|---|
+| `-u` | `--enable-usb` | Runs the container in privileged mode (this way you can use adb right from the container) |
+| `-r` | `--rebuild` | Force rebuild the image from scratch |
+| `-ws` | `--with-su` | Sets the WITH_SU environment variable to true (your builds will include the su binary) |
 
 The container uses "screen" to run the shell. This means that you will be able to open additional shells using [screen keyboard shortcuts][Screen_Shortcuts].
+
+### ADB in the container
+If you're on Linux and want to use adb from within the container running with `-u` might not be enough. Make sure you have the [Android udev rules](https://github.com/M0Rf30/android-udev-rules/blob/master/51-android.rules) installed on your host system so you can access your device without needing superuser permissions.
 
 ### How to build LineageOS for your device
 
@@ -39,9 +44,6 @@ source build/envsetup.sh
 breakfast <device codename>   # example: breakfast grouper
 brunch <device codename>      # example: brunch grouper
 ```
-
-### ADB in the container
-If you're on Linux and want to use adb from within the container running with `-u` might not be enough. Make sure you have the [Android udev rules](https://github.com/M0Rf30/android-udev-rules/blob/master/51-android.rules) installed on your host system so you can access your device without needing superuser permissions.
 
 ### Links
 
