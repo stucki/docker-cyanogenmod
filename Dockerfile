@@ -90,5 +90,7 @@ VOLUME /srv/ccache
 
 USER build
 WORKDIR /home/build/android
+RUN repo init -u git://github.com/lineageos/android.git -b lineage-15.1
+RUN repo sync -c -j 12
 
 CMD /home/build/startup.sh
