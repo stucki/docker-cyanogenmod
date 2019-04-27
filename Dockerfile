@@ -51,6 +51,8 @@ RUN sed -i 's/main$/main universe/' /etc/apt/sources.list \
       zlib1g-dev \
 # Install Java Development Kit
       openjdk-8-jdk \
+# Maven is required for building LineageOS 13
+      maven \
 # Install additional packages which are useful for building Android
       android-tools-adb \
       android-tools-fastboot \
